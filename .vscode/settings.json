@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "numeros+led": "cpp",
+        "mover_cursor": "cpp"
+    }
+}

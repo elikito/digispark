@@ -1,0 +1,36 @@
+#include "DigiKeyboard.h"
+const int ledPin = 1;
+
+void loop() {
+	digitalWrite(ledPin, HIGH);
+	delay(1000);
+	digitalWrite(ledPin, LOW);
+	delay(1000);
+
+	void setup() {
+		// Esperar 5 segundos antes de comenzar
+		delay(5000);
+
+		//Led
+		pinMode(ledPin, OUTPUT);
+
+		// Abrir el Bloc de notas
+		DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+		DigiKeyboard.delay(150);
+		DigiKeyboard.print("notepad");
+		DigiKeyboard.sendKeyStroke(KEY_ENTER);
+		DigiKeyboard.delay(1000);
+	}
+
+	void loop() {
+		// Escribir "prueba" y presionar Enter 10 veces
+		for (int i = 0; i < 18; i++) {
+			DigiKeyboard.print("prueba";
+			DigiKeyboard.sendKeyStroke(KEY_ENTER);
+			DigiKeyboard.delay(150);
+		}
+	
+		// Esperar 5 segundos antes de repetir
+		delay(5000);
+	}
+}

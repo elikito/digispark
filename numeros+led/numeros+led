@@ -1,0 +1,34 @@
+#include <DigiKeyboard.h>
+
+void setup() {
+	pinMode(1, OUTPUT); // Configuramos el pin 1 como salida para controlar el LED
+	DigiKeyboard.delay(2000); // Esperamos 2 segundos antes de empezar a escribir
+}
+
+void notepad() {
+	// Abrimos el Bloc de notas
+	DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+	DigiKeyboard.delay(2000); // Esperamos a que se abra el menú Ejecutar
+	DigiKeyboard.print("notepad"); // Escribimos "notepad" en el campo de texto
+	DigiKeyboard.sendKeyStroke(KEY_ENTER);
+	DigiKeyboard.delay(2000); // Esperamos a que se abra el Bloc de notas
+}
+
+void loop() {
+	// Parpadeamos el LED para empezar a escribir
+	digitalWrite(1, HIGH);
+	DigiKeyboard.delay(200);
+	digitalWrite(1, LOW);
+	DigiKeyboard.delay(200);
+
+	// Escribimos los números del uno al ciento uno
+	for (int i = 1; i <= 101; i++) {
+	DigiKeyboard.print("Prueba numero " + String(i) + "\n");
+	DigiKeyboard.delay(250);
+	}
+
+	DigiKeyboard.print("\n");
+	// Cerramos el Bloc de notas
+	//DigiKeyboard.sendKeyStroke(KEY_LEFT_ALT, KEY_F4);
+	//DigiKeyboard.delay(1000); // Esperamos a que se cierre el Bloc de notas
+}
