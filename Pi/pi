@@ -1,0 +1,20 @@
+#include "DigiKeyboard.h"
+
+const char* pi = "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679"; // Número pi
+
+void setup() {
+  DigiKeyboard.delay(5000); // Esperar 5 segundos antes de empezar
+}
+
+void loop() {
+  static int pos = 0; // Posición actual en el número pi
+  char digit[2] = {pi[pos], '\0'}; // Obtener el siguiente dígito de pi
+  DigiKeyboard.println(digit); // Escribir el dígito
+  pos++; // Avanzar a la siguiente posición
+  if (pi[pos] == '\0') { // Si llegamos al final del número pi
+    pos = 0; // Reiniciar la posición
+    DigiKeyboard.delay(5000); // Esperar 5 segundos antes de volver a empezar
+  } else {
+    DigiKeyboard.delay(5000); // Esperar 5 segundos antes de escribir el siguiente dígito
+  }
+}

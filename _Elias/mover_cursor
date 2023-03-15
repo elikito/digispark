@@ -1,0 +1,22 @@
+#include "DigiKeyboard.h"
+#define kbd_es_es 
+
+//const char* pi = "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679"; // Número pi
+bool running = true; // Indica si el programa está corriendo o no
+
+void setup() {
+  DigiKeyboard.delay(5000); // Esperar 5 segundos antes de empezar
+}
+
+void loop() {
+    DigiKeyboard.sendKeyStroke(KEY_ARROW_DOWN | MOD_CONTROL_LEFT, MOD_GUI_LEFT);
+        DigiKeyboard.delay(1500);
+    DigiKeyboard.sendKeyStroke(KEY_ARROW_LEFT | MOD_CONTROL_LEFT, MOD_GUI_LEFT);
+        DigiKeyboard.delay(1500);
+    DigiKeyboard.sendKeyStroke(KEY_ARROW_RIGHT | MOD_CONTROL_LEFT, MOD_GUI_LEFT);
+        DigiKeyboard.delay(1500);
+    DigiKeyboard.sendKeyStroke(KEY_ARROW_UP | MOD_CONTROL_LEFT, MOD_GUI_LEFT);
+        DigiKeyboard.delay(1500);
+  while(1);
+}
+
